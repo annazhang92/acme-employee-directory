@@ -1,0 +1,36 @@
+{% extends './layout.html' %}
+{% block content %}
+
+
+
+            <form action='/employees/' method='POST'>
+                <div>
+                    <label>Firstname</label>
+                    <input name='firstname'/>
+                </div>
+                <div>
+                    <label>Lastname</label>
+                    <input name='lastname'/>
+                </div>
+                <div>
+                    <label>Nickname</label>
+                    <input name='nickname'/>
+                </div>
+                <button class="btn btn-primary">Create A New Employee</button>
+            </form>
+            <ul>
+                {% for employee in employees %}
+                <li>
+                    <a href ='/employees/{{employee.id}}'>
+                    {{employee.firstname}}
+                    {{employee.lastname}}
+                    </a>
+                    {{employee.nicklength}} nicknames
+                    <form method='POST' action='/employees/{{employee.id}}?_method=DELETE'>
+                    <button class="btn btn-danger">Delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+
+{% endblock %}

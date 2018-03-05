@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.css'/>
+    </head>
+    <body>
+     <div class='container'>
+        <h1>Acme Employee Directory</h1>
+        <h1>{{ title }}</h1>
+        <p>We are a growing company, we currently have {{count}} employees and {{counttwo}} nicknames!</p>
+        <ul class ='nav nav-tabs'>
+            <li class='nav-item'>
+                <a href="/" class='nav-link'>Home</a>
+            </li>
+            <li class='nav-item'>
+                <a href="/employees" class='nav-link'>Employee</a>
+            </li>
+        </ul>
+        {% block content %}
+        {% endblock %}
+     </div>
+    </body>
+
+
+</html>

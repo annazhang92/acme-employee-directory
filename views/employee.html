@@ -1,0 +1,19 @@
+{% extends './layout.html' %}
+{% block content %}
+<form action='/employees/{{employee.id}}?_method=PATCH' method='POST'>
+    <div>
+        <input name='firstname' value='{{employee.firstname}}'/>
+    </div>
+    <div>
+        <input name='lastname' value='{{employee.lastname}}'/>
+    </div>
+    <div>
+        <input name='nickname' value='{{employee.nickname}}'/>
+    </div>
+    <button class="btn btn-primary">Update</button>
+</form>
+
+<form method='POST' action='/employees/{{employee.id}}?_method=DELETE'>
+    <button class="btn btn-danger">Delete</button>
+    </form>
+{% endblock %}
